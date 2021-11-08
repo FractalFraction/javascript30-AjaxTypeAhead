@@ -13,10 +13,10 @@
       <input type="search" placeholder="City or Country">
     </div>
     <ul id="results" class="results">
-
     </ul>
     <script>
       const endpoint = "https://andruxnet-world-cities-v1.p.rapidapi.com/?query=paris&searchby=city"
+
       let cities = mock.data.map(obj => obj.name)
 
       const search = document.getElementById("search")
@@ -27,7 +27,8 @@
       function hideOnClickOutside(element) {
       const outsideClickListener = event => {
           if (!element.contains(event.target) && isVisible(element)) { // or use: event.target.closest(selector) === null
-            results.replaceChildren()
+            results.style.visibility = "hidden"
+            //results.replaceChildren() 
           }
        }
       document.addEventListener('click', outsideClickListener)
@@ -39,11 +40,13 @@
     input.addEventListener('keyup', function() {
 
       // No results displayed if whitespace
-      if(input.value === /\s+/g){
+      if(input.value === /\s+/g || ""){
+        results.style.visibility = "hidden"
         results.replaceChildren()
         return;
       }
 
+      results.style.visibility = "visible"
       results.replaceChildren()
 
       displayedCities = cities.filter(city => city.toLowerCase().startsWith(this.value.toLowerCase()))
@@ -58,32 +61,15 @@
           })
     })
 
-
-
-    // let displayedCities
-    //   input.addEventListener('keydown', function() {
-
-    //     // filter through the list of results
-    //     displayedCities = cities.filter(city => city.includes(this.value))
-
-    //     let node, textnode
-    //     displayedCities.forEach((city) => {
-    //       node = document.createElement("li")
-    //       textnode = document.createTextNode(city)
-    //       node.appendChild(textnode)
-    //       results.appendChild(node)
-    //     })
-
-    //     // let node = document.createElement("li");    
-    //     // let textnode = document.createTextNode("Water"); 
-        
-        
-    //     // node.appendChild(textnode);                             
-    //     // results.appendChild(node);
-    //   })
-
       hideOnClickOutside(search)
 
+
+      // Make search results visible if the input field is clicked and the string contains at least one word
+      input.addEventListener('click', function(){
+        if(this.value !== ""){
+          results.style.visibility = "visible"
+        }
+      })
 
     </script>
   </body>

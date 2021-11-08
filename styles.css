@@ -43,3 +43,18 @@ input:focus {
   box-shadow: 2px 2px rgb(36, 36, 36);
 }
 
+ul {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 16px;
+  list-style-type: none;
+  background: rgb(185, 185, 185);
+  visibility: hidden;
+}
+
+li {
+  color: rgb(68, 67, 67);
+  background:  rgb(221, 220, 220);
+  padding: 8px;
+  margin-bottom: 8px;
+}
