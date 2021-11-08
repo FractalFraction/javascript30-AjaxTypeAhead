@@ -1,0 +1,22 @@
+{
+  "name": "javascript30-ajaxtypeahead",
+  "version": "1.0.0",
+  "description": "Sixth challenge in the Javascript30 series",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FractalFraction/javascript30-AjaxTypeAhead.git"
+  },
+  "author": "Colin Gardiner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FractalFraction/javascript30-AjaxTypeAhead/issues"
+  },
+  "homepage": "https://github.com/FractalFraction/javascript30-AjaxTypeAhead#readme",
+  "dependencies": {
+    "serve": "^13.0.2"
+  }
+}
